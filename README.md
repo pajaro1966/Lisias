@@ -5,9 +5,10 @@
 
 1. [Fragmento](Fragmento_001.md)
 
+<iframe style="width:100%;" src="Fragmento_001.html"></iframe>
 
-2. <iframe style="width:100%;" src="Fragmento_001.html"></iframe>
-
+<link href="Fragmento_0001.md" rel="import" />
+<link href="Fragmento_0001.html" rel="import" />
 
 
 1.1 Περὶ πολλοῦ ἂν ποιησαίμην[^1] , ὦ ἄνδρες, τὸ[^3] τοιούτους[^4] ὑμᾶς ἐμοὶ δικαστὰς περὶ τούτου τοῦ πράγματος γενέσθαι[^2], οἷοίπερ ἂν[^5] ὑμῖν αὐτοῖς[^6] εἴητε τοιαῦτα πεπονθότες·
