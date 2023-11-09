@@ -3,7 +3,7 @@
 
 ## Fragmento 1
 
-<iframe src="Fragmento_001.html"></iframe>
+<iframe style="width:100%;" src="Fragmento_001.html"></iframe>
 
 ## Fragmento 2
 
