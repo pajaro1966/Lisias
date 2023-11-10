@@ -1,8 +1,82 @@
-<!DOCTYPE html> <html><head> <link rel="stylesheet" href="static/Sintaxis.css"></head><body>
+<!DOCTYPE html> <html>
+    
+<head>
+    <link rel="stylesheet" href="static/Sintaxis.css">
+
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+
+    <script type="application/javascript">
+
+        function resizeIFrameToFitContent( iFrame ) {
+        
+            iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
+            iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+        }
+        
+        window.addEventListener('DOMContentLoaded', function(e) {
+        
+            var iFrame = document.getElementById( 'iFrame1' );
+            resizeIFrameToFitContent( iFrame );
+        
+            // or, to resize all iframes:
+            var iframes = document.querySelectorAll("iframe");
+            for( var i = 0; i < iframes.length; i++) {
+                resizeIFrameToFitContent( iframes[i] );
+            }
+        } );
+        
+        </script>
+</head>
+<body>
     
     <h1>Fragmento 1</h1>
 
-    <import src="Fragmento_002_Inter.html"></import>
+    
+    <iframe src="Fragmento_001.html" style="width:100%; height: 300px;"></iframe>
 
+    <iframe src="Fragmento_001_Graph.html" style="width:100%; height: 300px;"></iframe>
+    <br>
 
-    </body></html>
+    <iframe src="Fragmento_001_Inter.html" style="width:100%; height:300px;"></iframe>
+    <br>
+
+    <link href="Fragmento_001.html" rel="import" />
+
+    <br>
+
+    <div w3-include-html="Fragmento_001.html"></div>
+
+    <script>
+        function includeHTML() {
+          var z, i, elmnt, file, xhttp;
+          /* Loop through a collection of all HTML elements: */
+          z = document.getElementsByTagName("*");
+          for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+              /* Make an HTTP request using the attribute value as the file name: */
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  /* Remove the attribute, and call this function once more: */
+                  elmnt.removeAttribute("w3-include-html");
+                  includeHTML();
+                }
+              } 
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /* Exit the function: */
+              return;
+            }
+          }
+        }
+        </script>
+    </body>
+    
+    
+        
+        </html>
